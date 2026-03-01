@@ -7,13 +7,13 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     const loader = document.getElementById('loader');
     loader.classList.add('hidden');
-    // Activate hero immediately
     document.querySelector('#hero').classList.add('active');
     initParticles();
     startRoleTyping();
     initScrollObserver();
     initNavbar();
-    initPuzzle();
+    initMiniGame();
+    initTiltCards();
     initContactForm();
     initNavToggle();
   }, 1800);
@@ -39,24 +39,10 @@ function initParticles() {
     `;
     container.appendChild(p);
   }
-  // inject keyframes if not present
-  if (!document.getElementById('particleKF')) {
-    const style = document.createElement('style');
-    style.id = 'particleKF';
-    style.textContent = `
-      @keyframes particleFloat {
-        0%,100% { transform: translateY(0) translateX(0); opacity:0.3; }
-        25% { transform: translateY(-30px) translateX(15px); opacity:1; }
-        50% { transform: translateY(-50px) translateX(-10px); opacity:0.6; }
-        75% { transform: translateY(-20px) translateX(20px); opacity:0.8; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
 }
 
 // ===== ROLE TYPING EFFECT =====
-const roles = ['AI Engineer', 'ML Researcher', 'FPGA Developer', 'UI/UX Designer', 'Python Developer'];
+const roles = ['AI Engineer', 'ML Researcher', 'UI/UX Designer', 'Python Developer'];
 let roleIdx = 0, charIdx = 0, isDeleting = false;
 function startRoleTyping() {
   const el = document.getElementById('roleCycle');
@@ -121,124 +107,106 @@ function initNavToggle() {
   toggle.addEventListener('click', () => {
     links.classList.toggle('open');
   });
-  // Close on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => links.classList.remove('open'));
   });
 }
 
 // ============================
-//   PUZZLE SYSTEM
+//   SUDOKU GATEWAY
 // ============================
-const PUZZLES = [
-  {
-    question: "🧠 A machine can learn but never forgets to overfit. I work with these every day — what is this field of study called? (Two words!)",
-    answer: "machine learning",
-    hint: "Think: Python + TensorFlow + training models..."
-  },
-  {
-    question: "⚡ I take a trained neural network and squeeze it into a tiny chip so it can run without a powerful computer. What is this called? (Two words!)",
-    answer: "edge ai",
-    hint: "Think: FPGA, Artix-7, running AI at the 'edge'..."
-  },
-  {
-    question: "🎨 Before any code is written, designers create a visual blueprint of the app. Adarsh won 2nd place doing this! What tool did he use?",
-    answer: "figma",
-    hint: "It's a popular browser-based design collaboration tool..."
-  }
-];
+function initMiniGame() {
+  const boardEl = document.getElementById('sudoku-board');
+  if (!boardEl) return;
 
-let puzzleStep = 0;
-let hintsUsed = 0;
+  const puzzle = [
+    [0, 0, 1], [0, 2, 3],
+    [1, 1, 4], [1, 3, 2],
+    [2, 0, 2], [2, 2, 4],
+    [3, 1, 3], [3, 3, 1]
+  ];
+  const solution = [
+    [1, 2, 3, 4],
+    [3, 4, 1, 2],
+    [2, 1, 4, 3],
+    [4, 3, 2, 1]
+  ];
 
-function initPuzzle() {
-  renderPuzzle();
-  document.getElementById('riddleSubmit').addEventListener('click', checkAnswer);
-  document.getElementById('riddleAnswer').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') checkAnswer();
-  });
-  document.getElementById('hintBtn').addEventListener('click', showHint);
-}
-
-function renderPuzzle() {
-  const q = PUZZLES[puzzleStep];
-  document.getElementById('riddleQuestion').textContent = q.question;
-  document.getElementById('riddleAnswer').value = '';
-  document.getElementById('puzzleFeedback').textContent = '';
-  document.getElementById('puzzleFeedback').className = 'puzzle-feedback';
-  document.getElementById('hintText').textContent = '';
-  document.getElementById('progressText').textContent = `Question ${puzzleStep + 1} of ${PUZZLES.length}`;
-  // Update dots
-  PUZZLES.forEach((_, i) => {
-    const dot = document.getElementById(`pdot${i}`);
-    dot.className = 'pdot';
-    if (i < puzzleStep) dot.classList.add('done');
-    if (i === puzzleStep) dot.classList.add('active');
-  });
-}
-
-function checkAnswer() {
-  const input = document.getElementById('riddleAnswer').value.trim().toLowerCase();
-  const correct = PUZZLES[puzzleStep].answer.toLowerCase();
-  const feedback = document.getElementById('puzzleFeedback');
-
-  if (!input) {
-    showFeedback('⚠️ Type your answer first!', 'error');
-    return;
-  }
-
-  // Fuzzy check — allow partial matches
-  if (input === correct || correct.includes(input) && input.length > 3) {
-    showFeedback('✅ Correct! Nice one 🎉', 'success');
-    // Mark dot done
-    document.getElementById(`pdot${puzzleStep}`).className = 'pdot done';
-    puzzleStep++;
-    if (puzzleStep >= PUZZLES.length) {
-      setTimeout(unlockVault, 1000);
-    } else {
-      setTimeout(renderPuzzle, 1000);
+  boardEl.innerHTML = '';
+  for (let r = 0; r < 4; r++) {
+    for (let c = 0; c < 4; c++) {
+      let isFixed = puzzle.find(p => p[0] === r && p[1] === c);
+      if (isFixed) {
+        let div = document.createElement('div');
+        div.className = 'sudoku-cell fixed';
+        div.textContent = isFixed[2];
+        boardEl.appendChild(div);
+      } else {
+        let input = document.createElement('input');
+        input.type = 'number';
+        input.min = 1; input.max = 4;
+        input.className = 'sudoku-cell input';
+        input.dataset.r = r;
+        input.dataset.c = c;
+        boardEl.appendChild(input);
+      }
     }
-  } else {
-    showFeedback("❌ Not quite! Try again or use a hint 💡", 'error');
-    // Shake animation
-    const input_el = document.getElementById('riddleAnswer');
-    input_el.style.animation = 'shake 0.4s ease';
-    input_el.addEventListener('animationend', () => input_el.style.animation = '', { once: true });
-    if (!document.getElementById('shakeKF')) {
-      const style = document.createElement('style');
-      style.id = 'shakeKF';
-      style.textContent = `
-        @keyframes shake {
-          0%,100%{transform:translateX(0)} 20%{transform:translateX(-10px)}
-          40%{transform:translateX(10px)} 60%{transform:translateX(-6px)}
-          80%{transform:translateX(6px)}
+  }
+
+  const checkBtn = document.getElementById('checkSudokuBtn');
+  if (checkBtn) {
+    checkBtn.addEventListener('click', () => {
+      let win = true;
+      let empty = false;
+      let inputs = boardEl.querySelectorAll('input');
+      inputs.forEach(inp => {
+        let r = parseInt(inp.dataset.r);
+        let c = parseInt(inp.dataset.c);
+        if (!inp.value) { empty = true; win = false; }
+        else if (parseInt(inp.value) !== solution[r][c]) {
+          win = false;
+          inp.classList.add('error');
+        } else {
+          inp.classList.remove('error');
         }
-      `;
-      document.head.appendChild(style);
-    }
+      });
+      const msg = document.getElementById('sudokuMsg');
+      if (empty) {
+        msg.textContent = '⚠️ Please fill all blanks first!';
+        msg.style.color = '#fbbf24';
+      } else if (win) {
+        msg.textContent = '✅ Correct! Unlocking portfolio...';
+        msg.style.color = '#4ade80';
+        setTimeout(unlockVault, 1000);
+      } else {
+        msg.textContent = '❌ Some numbers are incorrect. Try again!';
+        msg.style.color = '#f87171';
+      }
+    });
   }
-}
 
-function showFeedback(msg, type) {
-  const el = document.getElementById('puzzleFeedback');
-  el.textContent = msg;
-  el.className = `puzzle-feedback ${type}`;
-}
-
-function showHint() {
-  const hint = PUZZLES[puzzleStep].hint;
-  document.getElementById('hintText').textContent = `Hint: ${hint}`;
-  hintsUsed++;
+  const skipBtn = document.getElementById('skipBtn');
+  if (skipBtn) {
+    skipBtn.addEventListener('click', () => {
+      document.getElementById('sudokuMsg').textContent = '⏭️ Skipping... Unlocking portfolio!';
+      document.getElementById('sudokuMsg').style.color = 'var(--text-dim)';
+      setTimeout(unlockVault, 800);
+    });
+  }
 }
 
 function unlockVault() {
-  // Hide puzzle container, show vault
-  document.getElementById('puzzleContainer').style.display = 'none';
-  const vault = document.getElementById('vaultContent');
-  vault.classList.remove('hidden');
-  vault.style.animation = 'fadeInUp 0.8s ease both';
-  // Confetti burst
+  document.getElementById('gateway').style.display = 'none';
+  const dp = document.getElementById('detailed-portfolio');
+  dp.style.display = 'block';
+  // Reinitialize observer for new sections
+  initScrollObserver();
+  document.querySelectorAll('.nav-detail').forEach(n => n.classList.remove('locked-nav'));
+  // Scroll to about
   confettiBurst();
+  setTimeout(() => {
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+  }, 1000);
 }
 
 function confettiBurst() {
@@ -259,16 +227,28 @@ function confettiBurst() {
     document.body.appendChild(c);
     c.addEventListener('animationend', () => c.remove());
   }
-  if (!document.getElementById('confettiKF')) {
-    const style = document.createElement('style');
-    style.id = 'confettiKF';
-    style.textContent = `
-      @keyframes confettiFall {
-        to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
+}
+
+// ============================
+//   TILT CARDS
+// ============================
+function initTiltCards() {
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      // Adjust intensity
+      const rotateX = ((y - centerY) / centerY) * -12;
+      const rotateY = ((x - centerX) / centerX) * 12;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+  });
 }
 
 // ===== CONTACT FORM =====
@@ -281,7 +261,6 @@ function initContactForm() {
     const email = document.getElementById('cfEmail').value;
     const msg = document.getElementById('cfMessage').value;
     const note = document.getElementById('formNote');
-    // Compose mailto link
     const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
     window.open(`mailto:adarsh2k004@gmail.com?subject=${subject}&body=${body}`, '_blank');
@@ -291,7 +270,6 @@ function initContactForm() {
   });
 }
 
-// ===== SMOOTH SCROLL FOR NAV LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -302,7 +280,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ===== NAV HIGHLIGHT ON active =====
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.querySelectorAll('.nav-links a').forEach(l => l.style.color = '');

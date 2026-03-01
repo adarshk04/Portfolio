@@ -1,482 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adarsh K — AI Engineer & Developer</title>
-  <meta name="description" content="Portfolio of Adarsh K, a final-year B.Tech Computer Science & AI student skilled in Machine Learning, Python, FPGA design, and UI/UX." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adarsh K — AI Engineer & Developer</title>
+    <meta name="description" content="Portfolio of Adarsh K - AI Engineer and UI/UX Designer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- ===== LOADING SCREEN ===== -->
-  <div id="loader" class="loader">
-    <div class="loader-inner">
-      <div class="loader-text">
-        <span>A</span><span>D</span><span>A</span><span>R</span><span>S</span><span>H</span>
-      </div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-text">
+                <span>A</span><span>D</span><span>A</span><span>R</span><span>S</span><span>H</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- ===== NAV ===== -->
-  <nav id="navbar" class="navbar">
-    <div class="nav-logo">AK<span class="dot">.</span></div>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#puzzle-gate">Unlock</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+    <!-- ===== NAV ===== -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-logo">AK<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#gateway">Unlock</a></li>
+            <li class="nav-detail locked-nav"><a href="#about">About</a></li>
+            <li class="nav-detail locked-nav"><a href="#skills">Skills</a></li>
+            <li class="nav-detail locked-nav"><a href="#projects">Projects</a></li>
+            <li class="nav-detail locked-nav"><a href="#experience">Experience</a></li>
+            <li class="nav-detail locked-nav"><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section id="hero" class="fx-slide active">
-    <div class="hero-bg">
-      <div class="grid-overlay"></div>
-      <div class="particles" id="particles"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-tag">Final Year B.Tech CSE (AI) Student</div>
-      <h1 class="hero-name">
-        <span class="line">Adarsh</span>
-        <span class="line accent">K.</span>
-      </h1>
-      <p class="hero-roles">
-        <span class="role-cycle" id="roleCycle">AI Engineer</span>
-      </p>
-      <p class="hero-bio">Building intelligent systems at the edge of hardware & software.</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#puzzle-gate" class="btn-ghost">🔐 Unlock Portfolio</a>
-      </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll to explore</span>
-        <div class="scroll-arrow"></div>
-      </div>
-    </div>
-    <div class="hero-photo-wrap">
-      <div class="photo-glow"></div>
-      <img src="assets/adarsh.jpg" alt="Adarsh K" class="hero-photo" id="heroPhoto" />
-      <div class="photo-ring"></div>
-    </div>
-  </section>
+    <!-- ===== HERO SECTION (OVERVIEW) ===== -->
+    <section id="hero" class="fx-slide active">
+        <div class="hero-bg">
+            <div class="grid-overlay"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag">Final Year B.Tech CSE (AI) Student</div>
+            <h1 class="hero-name">
+                <span class="line">Adarsh</span>
+                <span class="line accent">K.</span>
+            </h1>
+            <p class="hero-roles">
+                <span class="role-cycle" id="roleCycle">AI Engineer</span>
+            </p>
+            <p class="hero-bio">Building intelligent systems at the edge of hardware & software. I thrive at the
+                intersection of AI, hardware acceleration, and pixel-perfect design.</p>
+            <div class="hero-cta">
+                <a href="#gateway" class="btn-primary">View Full Portfolio</a>
+            </div>
+            <div class="hero-scroll-hint">
+                <span>Scroll to unlock</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+        <div class="hero-photo-wrap">
+            <div class="photo-glow"></div>
+            <img src="assets/adarsh.jpg" alt="Adarsh K" class="hero-photo" id="heroPhoto" />
+            <div class="photo-ring"></div>
+        </div>
+    </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="fx-slide">
-    <div class="section-inner">
-      <div class="section-label">01 — About</div>
-      <h2 class="section-title">Who I Am</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>I'm <strong>Adarsh K</strong>, a final-year B.Tech student in <strong>Computer Science & Engineering (Artificial Intelligence)</strong> at Providence College of Engineering, Chengannur.</p>
-          <p>I thrive at the intersection of AI, hardware acceleration, and design — from training deep learning models to deploying them on FPGAs, and crafting pixel-perfect UI/UX experiences.</p>
-          <p>Twice a <strong>Resource Person</strong> for Figma UI/UX Workshops, 2nd place in UI/UX competitions — I blend technical depth with creative aesthetics.</p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num">97.6%</span><span class="stat-label">CNN Model Accuracy</span></div>
-            <div class="stat"><span class="stat-num">7.29</span><span class="stat-label">CGPA</span></div>
-            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">SSLC Score</span></div>
-            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects</span></div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="info-item"><span class="info-icon">📍</span><span>Chengannur, Kerala, India</span></div>
-          <div class="info-item"><span class="info-icon">🎂</span><span>13 September 2004</span></div>
-          <div class="info-item"><span class="info-icon">📧</span><span>adarsh2k004@gmail.com</span></div>
-          <div class="info-item"><span class="info-icon">📱</span><span>+91 8139033917</span></div>
-          <div class="info-item"><span class="info-icon">🌐</span><span>Malayalam, English, Hindi, Tamil</span></div>
-          <a href="mailto:adarsh2k004@gmail.com" class="btn-primary mt-1">Hire Me</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ===== GATEWAY SECTION (MINI SUDOKU) ===== -->
+    <section id="gateway" class="fx-slide">
+        <div class="section-inner puzzle-section" style="text-align:center;">
+            <div class="section-label">GATEWAY</div>
+            <h2 class="section-title">Unlock The Vault</h2>
+            <p class="section-sub">Solve this mini 4x4 Sudoku to view my detailed portfolio.<br>Rules: Fill the grid so
+                every row, column, and 2x2 box contains numbers 1-4.</p>
 
-  <!-- ===== SKILLS SECTION ===== -->
-  <section id="skills" class="fx-slide">
-    <div class="section-inner">
-      <div class="section-label">02 — Skills</div>
-      <h2 class="section-title">Technical Arsenal</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <div class="skill-cat-icon">💻</div>
-          <h3>Programming</h3>
-          <div class="skill-pills">
-            <span class="pill">Python</span>
-            <span class="pill">C</span>
-            <span class="pill">Verilog</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-icon">🧠</div>
-          <h3>AI / ML</h3>
-          <div class="skill-pills">
-            <span class="pill">TensorFlow</span>
-            <span class="pill">Keras</span>
-            <span class="pill">OpenCV</span>
-            <span class="pill">Scikit-learn</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-icon">📊</div>
-          <h3>Data Analysis</h3>
-          <div class="skill-pills">
-            <span class="pill">NumPy</span>
-            <span class="pill">Pandas</span>
-            <span class="pill">Matplotlib</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-icon">🎨</div>
-          <h3>Design</h3>
-          <div class="skill-pills">
-            <span class="pill">Figma</span>
-            <span class="pill">Canva</span>
-            <span class="pill">UI/UX</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-icon">⚡</div>
-          <h3>Hardware</h3>
-          <div class="skill-pills">
-            <span class="pill">Xilinx Vivado</span>
-            <span class="pill">Artix-7 FPGA</span>
-            <span class="pill">Verilog HDL</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-icon">🤖</div>
-          <h3>Automation</h3>
-          <div class="skill-pills">
-            <span class="pill">UiPath (RPA)</span>
-            <span class="pill">n8n</span>
-            <span class="pill">Gradio</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS SECTION — 3D BOOK ===== -->
-  <section id="projects" class="fx-slide">
-    <div class="section-inner">
-      <div class="section-label">03 — Projects</div>
-      <h2 class="section-title">My Work</h2>
-      <p class="section-sub">Hover over the books to reveal project details ✨</p>
-      <div class="books-shelf">
-
-        <!-- Book 1 -->
-        <div class="book-wrap">
-          <div class="book" data-project="0">
-            <div class="book-front">
-              <div class="book-spine"></div>
-              <div class="book-cover">
-                <img src="assets/proj-kidney.png" alt="Kidney Cancer Detection" class="book-cover-img" />
-                <div class="book-title-overlay">
-                  <span class="book-tag">AI • Medical</span>
-                  <h3>Kidney Cancer Detection</h3>
+            <div class="sudoku-container">
+                <div id="sudoku-board" class="sudoku-board"></div>
+                <div class="sudoku-controls">
+                    <button id="checkSudokuBtn" class="btn-primary">Verify Answer</button>
+                    <button id="skipBtn" class="btn-ghost">Skip & View Portfolio</button>
                 </div>
-              </div>
+                <div id="sudokuMsg" class="sudoku-msg"></div>
             </div>
-            <div class="book-page book-page-1"></div>
-            <div class="book-page book-page-2"></div>
-            <div class="book-back"></div>
-            <div class="book-info">
-              <div class="book-info-inner">
-                <span class="book-info-tag">Mini Project — Completed 2025</span>
-                <h3>Hybrid CNN for Kidney Cancer Detection</h3>
-                <p>A novel Absolute Diagonal Pixel Deviation (Abs-DPD) pooling method with VGG16 transfer learning achieving <strong>97.6% accuracy</strong>. Real-time tumor detection via Gradio web interface.</p>
-                <div class="book-tech">
-                  <span>Python</span><span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>Gradio</span>
+
+            <!-- SOCIAL FALLBACK -->
+            <div class="social-fallback" id="socialFallback" style="margin-top: 40px;">
+                <p class="fallback-text">Or just connect with me on social media:</p>
+                <div class="socials">
+                    <a href="https://github.com/adarshk04" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank" class="social-link linkedin">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/mr_rapt0r" target="_blank" class="social-link instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                        Instagram
+                    </a>
+                    <a href="mailto:adarsh2k004@gmail.com" class="social-link email">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 5.457v13.909c0 .904-.49 1.682-1.232 2.096l-7.44-7.441 7.413-6.936A2.38 2.38 0 0124 5.457zM1.943 3h20.113c.604 0 1.158.211 1.595.562L12 13.807 .35 3.562A2.37 2.37 0 011.943 3zM0 5.457c0-.412.109-.795.295-1.125L7.808 11.02.233 18.553A2.39 2.39 0 010 17.366V5.457zM11.28 14.684l-1.278 1.196a1 1 0 01-1.36 0L7.37 14.686l-6.77 6.771c.44.35.995.543 1.593.543h20.113c.599 0 1.155-.195 1.596-.547L17.13 14.684l-1.271 1.196a3 3 0 01-4.08 0l-.5-.47.001.274z" />
+                        </svg>
+                        Email
+                    </a>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Book 2 -->
-        <div class="book-wrap">
-          <div class="book" data-project="1">
-            <div class="book-front">
-              <div class="book-spine"></div>
-              <div class="book-cover">
-                <img src="assets/proj-cartoon.png" alt="Cartoon Generator" class="book-cover-img" />
-                <div class="book-title-overlay">
-                  <span class="book-tag">Computer Vision</span>
-                  <h3>Cartoon Image Generator</h3>
+    <!-- DETAILED PORTFOLIO (Hidden Initially) -->
+    <div id="detailed-portfolio" style="display: none;">
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section id="about" class="fx-slide">
+            <div class="section-inner">
+                <div class="section-label">01 — About</div>
+                <h2 class="section-title">Who I Am</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm <strong>Adarsh K</strong>, a final-year B.Tech student in <strong>Computer Science &
+                                Engineering (Artificial Intelligence)</strong> at Providence College of Engineering,
+                            Chengannur.</p>
+                        <p>I thrive at the intersection of AI, hardware acceleration, and design — from training deep
+                            learning models to deploying them on FPGAs, and crafting pixel-perfect UI/UX experiences.
+                        </p>
+                        <p>Twice a <strong>Resource Person</strong> for Figma UI/UX Workshops, 2nd place in UI/UX
+                            competitions — I blend technical depth with creative aesthetics.</p>
+                        <div class="about-stats">
+                            <div class="stat"><span class="stat-num">97.6%</span><span class="stat-label">CNN Model
+                                    Accuracy</span></div>
+                            <div class="stat"><span class="stat-num">7.29</span><span class="stat-label">CGPA</span>
+                            </div>
+                            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">SSLC
+                                    Score</span></div>
+                            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <div class="info-item"><span class="info-icon">📍</span><span>Chengannur, Kerala, India</span>
+                        </div>
+                        <div class="info-item"><span class="info-icon">🎂</span><span>13 September 2004</span></div>
+                        <div class="info-item"><span class="info-icon">📧</span><span>adarsh2k004@gmail.com</span></div>
+                        <div class="info-item"><span class="info-icon">📱</span><span>+91 8139033917</span></div>
+                        <div class="info-item"><span class="info-icon">🌐</span><span>Malayalam, English, Hindi,
+                                Tamil</span></div>
+                        <a href="mailto:adarsh2k004@gmail.com" class="btn-primary mt-1">Hire Me</a>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="book-page book-page-1"></div>
-            <div class="book-page book-page-2"></div>
-            <div class="book-back"></div>
-            <div class="book-info">
-              <div class="book-info-inner">
-                <span class="book-info-tag">Personal Project</span>
-                <h3>Cartoon Image Generator</h3>
-                <p>Converts ordinary photos into cartoon-style images using Python and OpenCV. Applies image transformation techniques to generate a stylized cartoon effect while preserving key visual features.</p>
-                <div class="book-tech">
-                  <span>Python</span><span>OpenCV</span>
+        </section>
+
+        <!-- ===== SKILLS SECTION ===== -->
+        <section id="skills" class="fx-slide">
+            <div class="section-inner">
+                <div class="section-label">02 — Skills</div>
+                <h2 class="section-title">Technical Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">💻</div>
+                        <h3>Programming</h3>
+                        <div class="skill-pills">
+                            <span class="pill">Python</span>
+                            <span class="pill">C</span>
+                            <span class="pill">Verilog</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">🧠</div>
+                        <h3>AI / ML</h3>
+                        <div class="skill-pills">
+                            <span class="pill">TensorFlow</span>
+                            <span class="pill">Keras</span>
+                            <span class="pill">OpenCV</span>
+                            <span class="pill">Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">📊</div>
+                        <h3>Data Analysis</h3>
+                        <div class="skill-pills">
+                            <span class="pill">NumPy</span>
+                            <span class="pill">Pandas</span>
+                            <span class="pill">Matplotlib</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">🎨</div>
+                        <h3>Design</h3>
+                        <div class="skill-pills">
+                            <span class="pill">Figma</span>
+                            <span class="pill">Canva</span>
+                            <span class="pill">UI/UX</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">⚡</div>
+                        <h3>Hardware</h3>
+                        <div class="skill-pills">
+                            <span class="pill">Xilinx Vivado</span>
+                            <span class="pill">Artix-7 FPGA</span>
+                            <span class="pill">Verilog HDL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-icon">🤖</div>
+                        <h3>Automation</h3>
+                        <div class="skill-pills">
+                            <span class="pill">UiPath (RPA)</span>
+                            <span class="pill">n8n</span>
+                            <span class="pill">Gradio</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <!-- Book 3 -->
-        <div class="book-wrap">
-          <div class="book" data-project="2">
-            <div class="book-front">
-              <div class="book-spine"></div>
-              <div class="book-cover">
-                <img src="assets/proj-fpga.png" alt="FPGA Project" class="book-cover-img" />
-                <div class="book-title-overlay">
-                  <span class="book-tag">FPGA • Edge AI</span>
-                  <h3>Real-Time FPGA Tumor ID</h3>
+        <!-- ===== PROJECTS SECTION (TILT CARDS) ===== -->
+        <section id="projects" class="fx-slide">
+            <div class="section-inner">
+                <div class="section-label">03 — Projects</div>
+                <h2 class="section-title">My Work</h2>
+                <p class="section-sub">Hover over the cards to reveal project details ✨</p>
+
+                <div class="tilt-grid">
+
+                    <!-- Card 1 -->
+                    <div class="tilt-card" data-tilt>
+                        <img src="assets/proj-kidney.png" alt="Kidney Cancer Detection" class="tilt-img">
+                        <div class="tilt-overlay">
+                            <div class="tilt-content-visible">
+                                <span class="tilt-tag">AI • Medical</span>
+                                <h3 class="tilt-title">Kidney Cancer Detection</h3>
+                            </div>
+                            <div class="tilt-content-hidden">
+                                <p>Hybrid CNN with novel Abs-DPD pooling method achieving 97.6% accuracy. Real-time
+                                    Gradio interface.</p>
+                                <div class="tilt-tech"><span>Python</span><span>TensorFlow</span><span>OpenCV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="tilt-card" data-tilt>
+                        <img src="assets/proj-cartoon.png" alt="Cartoon Generator" class="tilt-img">
+                        <div class="tilt-overlay">
+                            <div class="tilt-content-visible">
+                                <span class="tilt-tag">Computer Vision</span>
+                                <h3 class="tilt-title">Cartoon Image Generator</h3>
+                            </div>
+                            <div class="tilt-content-hidden">
+                                <p>Converts ordinary photos into cartoon-style images using Python and OpenCV
+                                    transformations.</p>
+                                <div class="tilt-tech"><span>Python</span><span>OpenCV</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="tilt-card" data-tilt>
+                        <img src="assets/proj-fpga.png" alt="FPGA Project" class="tilt-img">
+                        <div class="tilt-overlay">
+                            <div class="tilt-content-visible">
+                                <span class="tilt-tag">FPGA • Edge AI</span>
+                                <h3 class="tilt-title">Real-Time FPGA Tumor ID</h3>
+                            </div>
+                            <div class="tilt-content-hidden">
+                                <p>Hardware-accelerated Hybrid CNN for kidney tumor classification on an Artix-7 FPGA
+                                    using fixed-point quantization.</p>
+                                <div class="tilt-tech"><span>Verilog</span><span>Xilinx Vivado</span><span>Python</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
             </div>
-            <div class="book-page book-page-1"></div>
-            <div class="book-page book-page-2"></div>
-            <div class="book-back"></div>
-            <div class="book-info">
-              <div class="book-info-inner">
-                <span class="book-info-tag">Major Project — Ongoing</span>
-                <h3>Resource-Efficient FPGA Kidney Tumor Identification</h3>
-                <p>Hardware-accelerated Hybrid CNN for kidney tumor classification on an Artix-7 FPGA. Uses fixed-point quantization and custom Abs-DPD pooling in Verilog for real-time, low-power edge AI inference.</p>
-                <div class="book-tech">
-                  <span>Python</span><span>Verilog</span><span>TensorFlow</span><span>Xilinx Vivado</span>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section id="experience" class="fx-slide">
+            <div class="section-inner">
+                <div class="section-label">04 — Journey</div>
+                <h2 class="section-title">Education & Achievements</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-side="left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">2022 — 2026</span>
+                            <h3>B.Tech in CSE (Artificial Intelligence)</h3>
+                            <p class="timeline-place">Providence College of Engineering, Chengannur</p>
+                            <p class="timeline-detail">CGPA: 7.29 | Specialization in AI & Machine Learning</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="right">
+                        <div class="timeline-dot highlight"></div>
+                        <div class="timeline-card featured">
+                            <span class="timeline-year">Activity</span>
+                            <h3>🏆 Twice Resource Person — Figma UI/UX Workshops</h3>
+                            <p class="timeline-place">Providence College of Engineering</p>
+                            <p class="timeline-detail">Conducted by Figma Design Club & Dept. of Computer Science
+                                (PROCESS & CSI)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">Award</span>
+                            <h3>🥈 2nd Place — UI/UX Design Competition</h3>
+                            <p class="timeline-place">IEEE, Providence College of Engineering</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EXPERIENCE / EDUCATION ===== -->
-  <section id="experience" class="fx-slide">
-    <div class="section-inner">
-      <div class="section-label">04 — Journey</div>
-      <h2 class="section-title">Education & Achievements</h2>
-      <div class="timeline">
-        <div class="timeline-item" data-side="left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-year">2022 — 2026</span>
-            <h3>B.Tech in CSE (Artificial Intelligence)</h3>
-            <p class="timeline-place">Providence College of Engineering, Chengannur</p>
-            <p class="timeline-detail">CGPA: 7.29 | Specialization in AI & Machine Learning</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-side="right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-year">2020 — 2022</span>
-            <h3>Class XII — Science</h3>
-            <p class="timeline-place">NSBHSS, Mannar, Alappuzha</p>
-            <p class="timeline-detail">Overall: 88.83%</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-side="left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-year">2020</span>
-            <h3>Class X — SSLC</h3>
-            <p class="timeline-place">SKVHS, Kuttemperoor, Alappuzha</p>
-            <p class="timeline-detail">Overall: 100% 🎉</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-side="right">
-          <div class="timeline-dot highlight"></div>
-          <div class="timeline-card featured">
-            <span class="timeline-year">Activity</span>
-            <h3>🏆 Twice Resource Person — Figma UI/UX Workshops</h3>
-            <p class="timeline-place">Providence College of Engineering</p>
-            <p class="timeline-detail">Conducted by Figma Design Club & Dept. of Computer Science (PROCESS & CSI)</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-side="left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-year">Award</span>
-            <h3>🥈 2nd Place — UI/UX Design Competition</h3>
-            <p class="timeline-place">IEEE, Providence College of Engineering</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-side="right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-year">Hackathon</span>
-            <h3>D;vine Hackathon — 18 Hr Design Sprint</h3>
-            <p class="timeline-place">IEEE SB CEC & IEDC, Jain University, Kochi</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PUZZLE GATE ===== -->
-  <section id="puzzle-gate" class="fx-slide">
-    <div class="section-inner puzzle-section">
-      <div class="section-label">05 — The Vault</div>
-      <h2 class="section-title">Unlock The Full Portfolio</h2>
-      <p class="section-sub">Can you solve my secret puzzle? 🔐 Solve it to reveal what's inside the vault!</p>
-
-      <div class="puzzle-container" id="puzzleContainer">
-        <div class="puzzle-wrapper">
-          <div class="puzzle-riddle">
-            <div class="riddle-icon">🧩</div>
-            <h3 id="riddleQuestion"></h3>
-            <div class="answer-row">
-              <input type="text" id="riddleAnswer" class="puzzle-input" placeholder="Your answer..." autocomplete="off" />
-              <button class="btn-primary" id="riddleSubmit">Submit</button>
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="fx-slide">
+            <div class="section-inner">
+                <div class="section-label">05 — Contact</div>
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p>I'm actively looking for <strong>entry-level opportunities</strong> in AI/ML, Data Science,
+                            or Software Development. Let's build something great together.</p>
+                        <div class="contact-links">
+                            <a href="mailto:adarsh2k004@gmail.com" class="contact-item">
+                                <span class="c-icon">📧</span>
+                                <span>adarsh2k004@gmail.com</span>
+                            </a>
+                            <a href="tel:+918139033917" class="contact-item">
+                                <span class="c-icon">📱</span>
+                                <span>+91 8139033917</span>
+                            </a>
+                            <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank" class="contact-item">
+                                <span class="c-icon">💼</span>
+                                <span>linkedin.com/in/adarsh-k-2b680325a</span>
+                            </a>
+                            <div class="contact-item">
+                                <span class="c-icon">📍</span>
+                                <span>Chengannur, Kerala, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="cfName" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="cfEmail" placeholder="Your Email" required />
+                        </div>
+                        <div class="form-group">
+                            <textarea id="cfMessage" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Send Message 🚀</button>
+                        <p class="form-note" id="formNote"></p>
+                    </form>
+                </div>
             </div>
-            <div class="puzzle-feedback" id="puzzleFeedback"></div>
-            <div class="puzzle-progress">
-              <span id="progressText">Question 1 of 3</span>
-              <div class="progress-dots">
-                <span class="pdot active" id="pdot0"></span>
-                <span class="pdot" id="pdot1"></span>
-                <span class="pdot" id="pdot2"></span>
-              </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-logo">AK<span class="dot">.</span></div>
+                <p class="footer-copy">© 2025 Adarsh K. Crafted with <span style="color:#e44d26">♥</span> & code.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/adarshk04" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/mr_rapt0r" target="_blank">Instagram</a>
+                </div>
             </div>
-          </div>
-          <div class="puzzle-hint-bar">
-            <button class="hint-btn" id="hintBtn">💡 Hint</button>
-            <span class="hint-text" id="hintText"></span>
-          </div>
-        </div>
-      </div>
+        </footer>
+    </div> <!-- Ends detailed-portfolio -->
 
-      <!-- UNLOCKED CONTENT -->
-      <div class="vault-content hidden" id="vaultContent">
-        <div class="vault-header">
-          <div class="vault-open-icon">🔓</div>
-          <h3>Vault Unlocked! Welcome in 👋</h3>
-          <p>Here's a deeper look at what I bring to the table:</p>
-        </div>
-        <div class="vault-grid">
-          <div class="vault-card">
-            <div class="vault-card-icon">🧬</div>
-            <h4>AI Research</h4>
-            <p>Developed a novel Abs-DPD pooling mechanism for CNNs, achieving 97.6% accuracy on kidney tumor classification — outperforming standard pooling methods.</p>
-          </div>
-          <div class="vault-card">
-            <div class="vault-card-icon">⚡</div>
-            <h4>Edge AI on FPGA</h4>
-            <p>Deploying inference models on Artix-7 FPGA with custom Verilog modules — balancing accuracy, latency, and power consumption for real-time medical imaging.</p>
-          </div>
-          <div class="vault-card">
-            <div class="vault-card-icon">🎨</div>
-            <h4>UI/UX Design</h4>
-            <p>Award-winning Figma designer, resource person for workshops, and hackathon participant. I bring both the engineering mind and the designer's eye.</p>
-          </div>
-          <div class="vault-card">
-            <div class="vault-card-icon">🤖</div>
-            <h4>Automation Expert</h4>
-            <p>Proficient in UiPath RPA and n8n workflow automation — building systems that eliminate repetitive tasks and scale efficiently.</p>
-          </div>
-        </div>
-        <div class="vault-cta">
-          <a href="mailto:adarsh2k004@gmail.com" class="btn-primary">📬 Let's Work Together</a>
-          <a href="https://github.com/adarshk04" target="_blank" class="btn-ghost">GitHub Profile</a>
-        </div>
-      </div>
-
-      <!-- SOCIAL FALLBACK -->
-      <div class="social-fallback" id="socialFallback">
-        <p class="fallback-text">Or just connect with me on social media:</p>
-        <div class="socials">
-          <a href="https://github.com/adarshk04" target="_blank" class="social-link github">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank" class="social-link linkedin">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://www.instagram.com/mr_rapt0r" target="_blank" class="social-link instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            Instagram
-          </a>
-          <a href="mailto:adarsh2k004@gmail.com" class="social-link email">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.49 1.682-1.232 2.096l-7.44-7.441 7.413-6.936A2.38 2.38 0 0124 5.457zM1.943 3h20.113c.604 0 1.158.211 1.595.562L12 13.807 .35 3.562A2.37 2.37 0 011.943 3zM0 5.457c0-.412.109-.795.295-1.125L7.808 11.02.233 18.553A2.39 2.39 0 010 17.366V5.457zM11.28 14.684l-1.278 1.196a1 1 0 01-1.36 0L7.37 14.686l-6.77 6.771c.44.35.995.543 1.593.543h20.113c.599 0 1.155-.195 1.596-.547L17.13 14.684l-1.271 1.196a3 3 0 01-4.08 0l-.5-.47.001.274z"/></svg>
-            Email
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="fx-slide">
-    <div class="section-inner">
-      <div class="section-label">06 — Contact</div>
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p>I'm actively looking for <strong>entry-level opportunities</strong> in AI/ML, Data Science, or Software Development. Let's build something great together.</p>
-          <div class="contact-links">
-            <a href="mailto:adarsh2k004@gmail.com" class="contact-item">
-              <span class="c-icon">📧</span>
-              <span>adarsh2k004@gmail.com</span>
-            </a>
-            <a href="tel:+918139033917" class="contact-item">
-              <span class="c-icon">📱</span>
-              <span>+91 8139033917</span>
-            </a>
-            <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank" class="contact-item">
-              <span class="c-icon">💼</span>
-              <span>linkedin.com/in/adarsh-k-2b680325a</span>
-            </a>
-            <div class="contact-item">
-              <span class="c-icon">📍</span>
-              <span>Chengannur, Kerala, India</span>
-            </div>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <input type="text" id="cfName" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input type="email" id="cfEmail" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <textarea id="cfMessage" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary w-full">Send Message 🚀</button>
-          <p class="form-note" id="formNote"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">AK<span class="dot">.</span></div>
-      <p class="footer-copy">© 2025 Adarsh K. Crafted with <span style="color:#e44d26">♥</span> & code.</p>
-      <div class="footer-socials">
-        <a href="https://github.com/adarshk04" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/adarsh-k-2b680325a/" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/mr_rapt0r" target="_blank">Instagram</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
