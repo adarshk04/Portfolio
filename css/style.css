@@ -1403,8 +1403,7 @@ textarea {
   }
 
   .vortex-container {
-    height: 420px;
-    overflow: hidden;
+    height: 380px;
   }
 
   .vortex-card {
@@ -1416,30 +1415,31 @@ textarea {
   .vortex-slider {
     width: 200px;
     height: 300px;
+    transform: scale(0.8);
   }
 
   .vortex-card:nth-child(1) {
-    transform: rotateY(0deg) translateZ(190px);
+    transform: rotateY(0deg) translateZ(160px);
   }
 
   .vortex-card:nth-child(2) {
-    transform: rotateY(60deg) translateZ(190px);
+    transform: rotateY(60deg) translateZ(160px);
   }
 
   .vortex-card:nth-child(3) {
-    transform: rotateY(120deg) translateZ(190px);
+    transform: rotateY(120deg) translateZ(160px);
   }
 
   .vortex-card:nth-child(4) {
-    transform: rotateY(180deg) translateZ(190px);
+    transform: rotateY(180deg) translateZ(160px);
   }
 
   .vortex-card:nth-child(5) {
-    transform: rotateY(240deg) translateZ(190px);
+    transform: rotateY(240deg) translateZ(160px);
   }
 
   .vortex-card:nth-child(6) {
-    transform: rotateY(300deg) translateZ(190px);
+    transform: rotateY(300deg) translateZ(160px);
   }
 
   .vortex-card h3 {
