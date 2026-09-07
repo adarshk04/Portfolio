@@ -42,7 +42,13 @@ function initParticles() {
 }
 
 // ===== ROLE TYPING EFFECT =====
-const roles = ['AI Engineer', 'ML Researcher', 'UI/UX Designer', 'Python Developer'];
+const roles = [
+  'AI & Edge AI Engineer',
+  'Deep Learning Developer',
+  'Computer Vision Specialist',
+  'RPA Automation Engineer',
+  'UI/UX Designer'
+];
 let roleIdx = 0, charIdx = 0, isDeleting = false;
 function startRoleTyping() {
   const el = document.getElementById('roleCycle');
@@ -80,15 +86,12 @@ function initScrollObserver() {
 }
 
 // ===== NAVBAR =====
-function initNavbar() {
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-  // Active section highlight
+let navObserver;
+function initNavbarObserver() {
+  if (navObserver) navObserver.disconnect();
   const sections = document.querySelectorAll('section[id]');
   const navLinksArr = document.querySelectorAll('.nav-links a');
-  const observer = new IntersectionObserver((entries) => {
+  navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinksArr.forEach(a => a.style.color = '');
@@ -96,8 +99,16 @@ function initNavbar() {
         if (active) active.style.color = 'var(--accent)';
       }
     });
-  }, { threshold: 0.4 });
-  sections.forEach(s => observer.observe(s));
+  }, { threshold: 0.3 });
+  sections.forEach(s => navObserver.observe(s));
+}
+
+function initNavbar() {
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  initNavbarObserver();
 }
 
 // ===== MOBILE NAV TOGGLE =====
@@ -199,8 +210,10 @@ function unlockVault() {
   document.getElementById('gateway').style.display = 'none';
   const dp = document.getElementById('detailed-portfolio');
   dp.style.display = 'block';
-  // Reinitialize observer for new sections
+  // Reinitialize observers and interactive cards for newly visible sections
   initScrollObserver();
+  initNavbarObserver();
+  initTiltCards();
   document.querySelectorAll('.nav-detail').forEach(n => n.classList.remove('locked-nav'));
   // Scroll to about
   confettiBurst();

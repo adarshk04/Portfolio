@@ -668,7 +668,7 @@ textarea {
 /* ===== SKILLS ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -1138,6 +1138,109 @@ textarea {
 .social-link.email:hover {
   background: rgba(108, 99, 255, 0.1);
   transform: translateY(-2px);
+}
+
+/* ============================
+   LEADERSHIP & ACHIEVEMENTS
+   ============================ */
+#achievements {
+  background: var(--bg);
+}
+
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.achieve-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.achieve-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.achieve-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.achieve-card:hover::before {
+  opacity: 1;
+}
+
+.achieve-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.achieve-badge.award {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: #fbbf24;
+}
+
+.achieve-badge.leader {
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid var(--border-strong);
+  color: var(--accent-2);
+}
+
+.achieve-badge.hackathon {
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--accent-2);
+}
+
+.achieve-card h3 {
+  font-family: var(--font);
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.achieve-org {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.achieve-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: auto;
 }
 
 /* ===== CONTACT ===== */
